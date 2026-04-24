@@ -1,7 +1,7 @@
 from src.processing import filter_by_state, sort_by_date
 
 
-def test_filter_by_state():
+def test_filter_by_state() -> None:
     data = [
         {"state": "EXECUTED", "id": 1},
         {"state": "CANCELED", "id": 2},
@@ -11,7 +11,7 @@ def test_filter_by_state():
     assert filter_by_state(data, "CANCELED") == [{"state": "CANCELED", "id": 2}]
 
 
-def test_sort_by_date():
+def test_sort_by_date() -> None:
     data = [
         {"date": "2019-07-03T18:35:29.512364", "id": 1},
         {"date": "2018-06-30T02:08:58.425572", "id": 2},
