@@ -6,12 +6,18 @@ authors = ["Ваше Имя <ваша_почта@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pytest-cov = "^7.1.0"
 
 [tool.poetry.group.lint.dependencies]
 flake8 = "^6.0"
 black = "^23.0"
 isort = "^5.12"
 mypy = "^1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.2.2"
+pytest-cov = "^7.1.0"
 
 [build-system]
 requires = ["poetry-core"]
