@@ -2,7 +2,8 @@
 Тесты для модуля generators.
 """
 import pytest
-from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
+
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
 # Фикстура с типовыми транзакциями
@@ -104,12 +105,15 @@ def test_card_number_generator_start_equal_stop() -> None:
 
 
 # Параметризация для различных диапазонов
-@pytest.mark.parametrize("start,stop,expected_first", [
-    (1, 1, "0000 0000 0000 0001"),
-    (10, 10, "0000 0000 0000 0010"),
-    (9999, 9999, "0000 0000 0000 9999"),
-    (10000, 10000, "0000 0000 0001 0000"),
-])
+@pytest.mark.parametrize(
+    "start,stop,expected_first",
+    [
+        (1, 1, "0000 0000 0000 0001"),
+        (10, 10, "0000 0000 0000 0010"),
+        (9999, 9999, "0000 0000 0000 9999"),
+        (10000, 10000, "0000 0000 0001 0000"),
+    ],
+)
 def test_card_number_generator_parametrized(start: int, stop: int, expected_first: str) -> None:
     """Параметризованный тест граничных значений."""
     gen = card_number_generator(start, stop)

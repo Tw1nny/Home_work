@@ -2,7 +2,7 @@
 Модуль с генераторами для обработки банковских транзакций.
 """
 
-from typing import List, Dict, Any, Iterator
+from typing import Any, Dict, Iterator, List
 
 
 def filter_by_currency(transactions: List[Dict[str, Any]], currency_code: str) -> Iterator[Dict[str, Any]]:
@@ -19,9 +19,11 @@ def filter_by_currency(transactions: List[Dict[str, Any]], currency_code: str) -
     """
     for transaction in transactions:
         # Проверяем наличие поля operationAmount и currency
-        if (transaction.get("operationAmount") and
-            transaction["operationAmount"].get("currency") and
-            transaction["operationAmount"]["currency"].get("code") == currency_code):
+        if (
+            transaction.get("operationAmount")
+            and transaction["operationAmount"].get("currency")
+            and transaction["operationAmount"]["currency"].get("code") == currency_code
+        ):
             yield transaction
 
 
@@ -56,5 +58,5 @@ def card_number_generator(start: int, stop: int) -> Iterator[str]:
         # Форматируем как 16-значное число с ведущими нулями
         card_str = f"{number:016d}"
         # Разбиваем на группы по 4 цифры
-        formatted = " ".join([card_str[i:i+4] for i in range(0, 16, 4)])
+        formatted = " ".join([card_str[i : i + 4] for i in range(0, 16, 4)])
         yield formatted
