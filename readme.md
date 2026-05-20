@@ -12,3 +12,18 @@
 
 ```bash
 poetry install
+```
+
+## Модуль 'generators'
+
+Содержит генераторы для эффективной обработки списков транзакций.
+
+### `filter_by_currency(transactions, currency_code)`
+
+Итератор, возвращающий транзакции с заданной валютой.
+
+```python
+from src.generators import filter_by_currency
+
+for transaction in filter_by_currency(transactions, "USD"):
+    print(transaction)

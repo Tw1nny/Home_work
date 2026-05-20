@@ -2,7 +2,7 @@
 Модуль обработки списка банковских операций: фильтрация по статусу, сортировка по дате.
 """
 
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 
 def filter_by_state(data: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict[str, Any]]:
