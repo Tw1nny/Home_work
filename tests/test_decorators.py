@@ -7,12 +7,14 @@ from src.decorators import log
 
 # ... другие тесты ...
 
+
 def test_log_to_file_success() -> None:
     """Логирование успешного вызова в файл."""
     # Создаём временный файл, который не будет заблокирован
     fd, path = tempfile.mkstemp(text=True)
     os.close(fd)  # Закрываем дескриптор, чтобы файл можно было открыть повторно
     try:
+
         @log(filename=path)
         def multiply(a: int, b: int) -> int:
             return a * b
@@ -32,6 +34,7 @@ def test_log_to_file_error() -> None:
     fd, path = tempfile.mkstemp(text=True)
     os.close(fd)
     try:
+
         @log(filename=path)
         def faulty_function(msg: str) -> None:
             raise ValueError(msg)

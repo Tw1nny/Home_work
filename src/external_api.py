@@ -3,8 +3,9 @@
 """
 
 import os
+from typing import Any, Dict
+
 import requests
-from typing import Dict, Any
 from dotenv import load_dotenv
 
 # Загружаем переменные окружения из .env
@@ -65,7 +66,7 @@ def convert_to_rub(transaction: Dict[str, Any]) -> float:
         rate = data.get("rates", {}).get("RUB")
         if rate is None:
             raise RuntimeError("RUB rate not found in API response")
-        return round(amount * rate, 2)
+        return round(float(amount) * float(rate), 2)
     except (requests.RequestException, KeyError, ValueError) as e:
         # В случае ошибки API можно либо пробросить исключение, либо вернуть 0.
         # По заданию: если не удалось конвертировать, можно вернуть исходную сумму? Лучше raise.
