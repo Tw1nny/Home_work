@@ -50,3 +50,12 @@ def divide(a, b):
 
 divide(10, 0)   # вывод: divide error: ZeroDivisionError. Inputs: (10, 0), {}
 ```
+## Модуль `utils`
+
+`get_transactions_from_json(file_path)` – загружает список транзакций из JSON-файла.
+
+## Модуль `external_api`
+
+`convert_to_rub(transaction)` – конвертирует сумму транзакции в рубли с использованием Exchange Rates Data API.
+
+Для работы API необходимо создать файл `.env` и поместить туда ключ:
