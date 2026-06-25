@@ -12,3 +12,50 @@
 
 ```bash
 poetry install
+```
+
+## Модуль 'generators'
+
+Содержит генераторы для эффективной обработки списков транзакций.
+
+### `filter_by_currency(transactions, currency_code)`
+
+Итератор, возвращающий транзакции с заданной валютой.
+
+```python
+from src.generators import filter_by_currency
+
+for transaction in filter_by_currency(transactions, "USD"):
+    print(transaction)
+```
+
+## Декоратор `log`
+
+Модуль `decorators` предоставляет декоратор `log` для автоматического логирования вызовов функций.
+
+### Использование
+
+```python
+from src.decorators import log
+
+@log(filename="log.txt")
+def my_func(x, y):
+    return x + y
+
+my_func(1, 2)   # запись в файл: my_func ok
+
+@log()          # логирование в консоль
+def divide(a, b):
+    return a / b
+
+divide(10, 0)   # вывод: divide error: ZeroDivisionError. Inputs: (10, 0), {}
+```
+## Модуль `utils`
+
+`get_transactions_from_json(file_path)` – загружает список транзакций из JSON-файла.
+
+## Модуль `external_api`
+
+`convert_to_rub(transaction)` – конвертирует сумму транзакции в рубли с использованием Exchange Rates Data API.
+
+Для работы API необходимо создать файл `.env` и поместить туда ключ:

@@ -3,15 +3,24 @@ name = "bank-widget"
 version = "0.1.0"
 description = "Виджет для банковских операций"
 authors = ["Ваше Имя <ваша_почта@example.com>"]
+package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.10,<4.0"
+pytest-cov = "^7.1.0"
+requests = "^2.34.2"
+python-dotenv = "^1.2.2"
 
 [tool.poetry.group.lint.dependencies]
 flake8 = "^6.0"
 black = "^23.0"
 isort = "^5.12"
 mypy = "^1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.2.2"
+pytest-cov = "^7.1.0"
+types-requests = "^2.33.0.20260518"
 
 [build-system]
 requires = ["poetry-core"]
@@ -33,3 +42,16 @@ profile = "black"
 disallow_untyped_defs = true
 warn_return_any = true
 exclude = "venv"
+
+[[tool.mypy.overrides]]
+module = "pytest"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "dotenv"
+ignore_missing_imports = true
