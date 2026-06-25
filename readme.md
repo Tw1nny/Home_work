@@ -73,3 +73,17 @@ from src.file_reader import read_transactions_from_csv
 
 transactions = read_transactions_from_csv("data/transactions.csv")
 print(len(transactions))
+```
+
+
+## Поиск и подсчёт категорий
+
+Модуль `transaction_operations` предоставляет две полезные функции:
+
+### `search_by_description(transactions, search_string)`
+
+Возвращает список транзакций, у которых в поле `description` встречается искомая строка (без учёта регистра). Используется библиотека `re`.
+
+```python
+from src.transaction_operations import search_by_description
+found = search_by_description(transactions, "перевод")

@@ -1,5 +1,6 @@
 import pytest
-from src.transaction_operations import search_by_description, count_operations_by_categories
+
+from src.transaction_operations import count_operations_by_categories, search_by_description
 
 
 @pytest.fixture
