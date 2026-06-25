@@ -59,17 +59,3 @@ divide(10, 0)   # вывод: divide error: ZeroDivisionError. Inputs: (10, 0), 
 `convert_to_rub(transaction)` – конвертирует сумму транзакции в рубли с использованием Exchange Rates Data API.
 
 Для работы API необходимо создать файл `.env` и поместить туда ключ:
-
-## Чтение данных из CSV и Excel
-
-Модуль `file_reader` предоставляет функции для загрузки транзакций из файлов разных форматов.
-
-### `read_transactions_from_csv(file_path)`
-
-Читает CSV-файл с разделителем `;` и возвращает список словарей с транзакциями.
-
-```python
-from src.file_reader import read_transactions_from_csv
-
-transactions = read_transactions_from_csv("data/transactions.csv")
-print(len(transactions))

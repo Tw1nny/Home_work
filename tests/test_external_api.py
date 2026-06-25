@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock, patch
+from requests.exceptions import RequestException
 
 import pytest
-from requests.exceptions import RequestException
 
 from src.external_api import convert_to_rub
 
