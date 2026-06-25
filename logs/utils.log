@@ -1,0 +1,10 @@
+2026-06-25 17:00:31,726 - src.utils - DEBUG - Попытка открыть файл: C:\Users\Tw1nSen\AppData\Local\Temp\tmp6z94nzkz
+2026-06-25 17:00:31,727 - src.utils - INFO - Файл успешно загружен, количество транзакций: 2
+2026-06-25 17:00:31,730 - src.utils - DEBUG - Попытка открыть файл: C:\Users\Tw1nSen\AppData\Local\Temp\tmp57una28a
+2026-06-25 17:00:31,730 - src.utils - INFO - Файл успешно загружен, количество транзакций: 0
+2026-06-25 17:00:31,732 - src.utils - DEBUG - Попытка открыть файл: C:\Users\Tw1nSen\AppData\Local\Temp\tmpi5t17rfe
+2026-06-25 17:00:31,738 - src.utils - ERROR - Файл C:\Users\Tw1nSen\AppData\Local\Temp\tmpi5t17rfe содержит не список (тип dict), возвращаем пустой список
+2026-06-25 17:00:31,740 - src.utils - DEBUG - Попытка открыть файл: nonexistent.json
+2026-06-25 17:00:31,740 - src.utils - ERROR - Файл не найден: nonexistent.json
+2026-06-25 17:00:31,741 - src.utils - DEBUG - Попытка открыть файл: C:\Users\Tw1nSen\AppData\Local\Temp\tmpd1fjuw0_
+2026-06-25 17:00:31,742 - src.utils - ERROR - Ошибка декодирования JSON в файле C:\Users\Tw1nSen\AppData\Local\Temp\tmpd1fjuw0_: Expecting value: line 1 column 1 (char 0)
